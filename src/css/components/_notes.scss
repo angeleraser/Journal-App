@@ -1,0 +1,51 @@
+.notes__main-content {
+  padding: 30px;
+}
+
+.notes__appbar {
+  padding-bottom: 28px;
+}
+
+.notes__appbar h2 {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.notes__appbar > div button {
+  width: 124px;
+  background-color: #fff;
+  color: $primary;
+}
+
+.notes__appbar > div button:first-child {
+  margin-right: 22px;
+}
+
+.notes__add-note {
+  height: 100%;
+}
+
+.notes__add-note input,
+.notes__add-note textarea {
+  background-color: transparent;
+  font-size: 24px;
+  color: $dark-grey;
+  &:focus {
+    outline: none;
+  }
+}
+
+.notes__add-note input {
+  margin-bottom: 24px;
+}
+
+.notes__add-note textarea {
+  display: inline-block;
+  resize: none;
+  height: 100%;
+}
+
+.notes__add-note .note-image {
+  height: 150px;
+}

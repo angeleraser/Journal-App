@@ -1,0 +1,51 @@
+.btn {
+  color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 7px 10px;
+  font-weight: 700;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-rounded {
+  border-radius: 40px;
+}
+
+.btn-shadow {
+  box-shadow: 0 2px 12px rgba($color: #000000, $alpha: 0.2);
+}
+
+.btn-primary {
+  background-color: $primary;
+  &:disabled {
+    background-color: lighten($color: $primary, $amount: 5);
+  }
+  &:hover {
+    background-color: darken($color: $primary, $amount: 10);
+  }
+}
+
+.google-btn-wrapper {
+  background-color: $google-blue;
+  height: 52px;
+  padding: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 2px;
+}
+.google-btn-wrapper .google-icon {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50px;
+  border-radius: 2px;
+}
