@@ -12,3 +12,15 @@ export const removeUiError = () => {
     type: TYPES.uiRemoveError,
   };
 };
+
+export const uiStartLoading = () => {
+  return {
+    type: TYPES.uiStartLoading,
+  };
+};
+
+export const uiFinishLoading = () => {
+  return {
+    type: TYPES.uiFinishLoading,
+  };
+};
