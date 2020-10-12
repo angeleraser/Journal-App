@@ -1,3 +1,6 @@
+import firebase from "firebase/app";
+import "firebase/firebase-firestore";
+import "firebase/firebase-auth";
 const firebaseConfig = {
   apiKey: "AIzaSyA2Iges9_vdmAjZ6k0CXQj9Z5VE1rtvT4k",
   authDomain: "react-apps-139bb.firebaseapp.com",
@@ -7,9 +10,8 @@ const firebaseConfig = {
   messagingSenderId: "793702707855",
   appId: "1:793702707855:web:ccb866ae82f727f0f1f6fa",
 };
-export const firebaseModule = (firebase) => {
-  firebase.initializeApp(firebaseConfig);
-  const dataBase = firebase.firestore();
-  const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-  return { dataBase, googleAuthProvider, firebase };
-};
+firebase.initializeApp(firebaseConfig);
+const dataBase = firebase.firestore();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { dataBase, firebase, googleAuthProvider };

@@ -4,20 +4,22 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Redirect, Switch } from "react-router-dom";
-import { FIREBASE } from "..";
 import { login } from "../actions/auth";
 import { JournalScreen } from "../components/journal/JournalScreen";
 import { AuthRouter } from "./AuthRouter";
 import { PublicRoutes } from "./PublicRoutes";
 import { PrivateRoute } from "./PrivateRoute";
+import { startLoadingNotes } from "../actions/notes";
+import { firebase } from "../firebase/firebase-config";
 export const AppRouter = () => {
   const [checking, setChecking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
-    FIREBASE.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(async (user) => {
       if (user?.uid) {
         dispatch(login(user.uid, user.displayName));
+        dispatch(startLoadingNotes(user.uid));
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn(false);
@@ -27,7 +29,7 @@ export const AppRouter = () => {
   }, []);
   if (checking) {
     return <h1>Loading...</h1>;
-  };
+  }
   return (
     <BrowserRouter>
       <Switch>

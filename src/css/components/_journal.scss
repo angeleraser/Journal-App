@@ -17,6 +17,7 @@
   background-color: $dark-grey;
   color: #ffffff;
   display: grid;
+  grid-template-rows: 30px auto 1fr;
   row-gap: 30px;
   padding: 30px;
   flex-shrink: 0;
@@ -94,8 +95,8 @@
 
 .journal__entry-date-box {
   font-size: 12px;
-  display: none;
-  flex-direction: column;
+  font-weight: 700;
+  display: flex;
   align-items: center;
 }
 

@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
-import { FIREBASE, googleAuthProvider } from "..";
 import { TYPES } from "../types/types";
+import { cleanNotesAfterLogout } from "./notes";
+import { firebase, googleAuthProvider } from "../firebase/firebase-config";
 import { uiStartLoading, uiFinishLoading } from "./ui";
 // NOTA: Si la tarea es asincrona la funcion debe retonar otra funcion que realiza el dispatch, sino un objeto con el tipo de accion y el payload normal.
 
@@ -17,10 +18,9 @@ export const startLoginEmailPassword = (email, password) => {
     try {
       dispatch(uiStartLoading());
       {
-        const { user } = await FIREBASE.auth().signInWithEmailAndPassword(
-          email,
-          password
-        );
+        const { user } = await firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password);
         dispatch(login(user.uid, user.displayName));
       }
     } catch (error) {
@@ -37,10 +37,9 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
     try {
       dispatch(uiStartLoading());
       {
-        const { user } = await FIREBASE.auth().createUserWithEmailAndPassword(
-          email,
-          password
-        );
+        const { user } = await firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password);
         await user.updateProfile({ displayName: name });
         dispatch(login(user.uid, user.displayName));
       }
@@ -57,12 +56,10 @@ export const startGoogleLogin = () => {
   return async (dispatch) => {
     try {
       dispatch(uiStartLoading());
-      {
-        const { user } = await FIREBASE.auth().signInWithPopup(
-          googleAuthProvider
-        );
-        dispatch(login(user.id, user.displayName));
-      }
+      const { user } = await firebase
+        .auth()
+        .signInWithPopup(googleAuthProvider);
+      dispatch(login(user.uid, user.displayName));
     } catch (error) {
       console.log(error);
       Swal.fire("Error", error.message, "error");
@@ -74,8 +71,9 @@ export const startGoogleLogin = () => {
 
 export const startLogout = () => {
   return async (dispatch) => {
-    await FIREBASE.auth().signOut();
+    await firebase.auth().signOut();
     dispatch(logout());
+    dispatch(cleanNotesAfterLogout());
   };
 };
 
