@@ -49,3 +49,28 @@
   width: 50px;
   border-radius: 2px;
 }
+
+.menu-btn {
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  box-shadow: 0 2px 22px rgba($color: #000000, $alpha: 0.4);
+  bottom: 26px;
+  right: 32px;
+
+  @media screen and (min-width: 724px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.menu-btn svg {
+  fill: #fff;
+}
+
+.delete-btn {
+  background-color: #d75a4a;
+  max-width: 124px;
+  border-radius: 4px;
+}

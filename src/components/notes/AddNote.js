@@ -29,19 +29,21 @@ export const AddNote = () => {
         onChange={handleInputChange}
         type="text"
         value={title}
+        autoComplete="off"
         placeholder="Add a title"
       />
       <textarea
         onChange={handleInputChange}
         name="body"
         value={body}
+        autoComplete="off"
         placeholder="What happened today?"></textarea>
       {!!selected.imgURL && (
         <div className="note-image">
           <img className="h-full btn-shadow" src={selected.imgURL} alt="note" />
         </div>
       )}
-      <button onClick={handleDeleteNote} className="btn btn-danger">
+      <button onClick={handleDeleteNote} className="btn delete-btn">
         Delete
       </button>
     </div>

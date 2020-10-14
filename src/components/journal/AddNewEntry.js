@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addNewNote } from "../../actions/notes";
+import { closedSidebar } from "../../actions/sidebar";
 import { addIconSvg } from "../../icons/svg";
 
 export const AddNewEntry = () => {
@@ -9,6 +10,7 @@ export const AddNewEntry = () => {
     <button
       onClick={() => {
         dispatch(addNewNote());
+        dispatch(closedSidebar());
       }}
       className="journal__new-entry">
       Add New entry

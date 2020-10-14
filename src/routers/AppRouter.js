@@ -11,6 +11,7 @@ import { PublicRoutes } from "./PublicRoutes";
 import { PrivateRoute } from "./PrivateRoute";
 import { startLoadingNotes } from "../actions/notes";
 import { firebase } from "../firebase/firebase-config";
+import { LoadingScreen } from "../components/LoadingScreen/LoadingScreen";
 export const AppRouter = () => {
   const [checking, setChecking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,7 +19,7 @@ export const AppRouter = () => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged(async (user) => {
       if (user?.uid) {
-        dispatch(login(user.uid, user.displayName));
+        dispatch(login(user.uid, user.displayName, user.photoURL));
         dispatch(startLoadingNotes(user.uid));
         setIsLoggedIn(true);
       } else {
@@ -28,7 +29,7 @@ export const AppRouter = () => {
     });
   }, []);
   if (checking) {
-    return <h1>Loading...</h1>;
+    return <LoadingScreen />;
   }
   return (
     <BrowserRouter>

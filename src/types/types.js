@@ -5,6 +5,9 @@ export const TYPES = {
   uiSetError: "[UI] Set Error",
   uiRemoveError: "[UI] Remove Error",
 
+  sidebarOpen: "[Sidebar] Open",
+  sidebarClosed: "[Sidebar] Closed",
+
   uiStartLoading: "[UI] Start Loading",
   uiFinishLoading: "[UI] Finish Loading",
 

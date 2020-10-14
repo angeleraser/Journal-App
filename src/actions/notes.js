@@ -3,6 +3,7 @@ import { dataBase } from "../firebase/firebase-config";
 import { uploadFile } from "../helpers/fileUpload";
 import { fetchUserInfoFromDatabase } from "../helpers/loadNotes";
 import { TYPES } from "../types/types";
+import { uiFinishLoading, uiStartLoading } from "./ui";
 
 export const addNewNote = () => {
   return async (dispatch, getState) => {
@@ -16,14 +17,21 @@ export const addNewNote = () => {
       date: new Date().getTime(),
       imgURL: null,
     };
-    /*
-     Collection journal by user ID 
-    */
-    const DOCUMENT_REF = await dataBase
-      .collection(`${uID}/journal/notes`)
-      .add(newEntry);
-    dispatch(selectNote(DOCUMENT_REF.id, newEntry));
-    dispatch(updateNoteList(DOCUMENT_REF.id, newEntry));
+    try {
+      dispatch(uiStartLoading());
+      console.log("Creating note...");
+      const DOCUMENT_REF = await dataBase
+        .collection(`${uID}/journal/notes`)
+        .add(newEntry);
+      console.log("Creating note done!");
+      dispatch(uiFinishLoading());
+      dispatch(selectNote(DOCUMENT_REF.id, newEntry));
+      dispatch(updateNoteList(DOCUMENT_REF.id, newEntry));
+    } catch (error) {
+      Swal.fire("Error", error.message, "error");
+    } finally {
+      dispatch(uiFinishLoading());
+    }
   };
 };
 

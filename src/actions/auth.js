@@ -5,11 +5,12 @@ import { firebase, googleAuthProvider } from "../firebase/firebase-config";
 import { uiStartLoading, uiFinishLoading } from "./ui";
 // NOTA: Si la tarea es asincrona la funcion debe retonar otra funcion que realiza el dispatch, sino un objeto con el tipo de accion y el payload normal.
 
-export const login = (uID, displayName) => ({
+export const login = (uID, displayName, photoURL) => ({
   type: TYPES.login,
   payload: {
     uID,
     displayName,
+    photoURL,
   },
 });
 
@@ -21,11 +22,10 @@ export const startLoginEmailPassword = (email, password) => {
         const { user } = await firebase
           .auth()
           .signInWithEmailAndPassword(email, password);
-        dispatch(login(user.uid, user.displayName));
+        dispatch(login(user.uid, user.displayName, null));
       }
     } catch (error) {
       Swal.fire("Error", error.message, "error");
-      console.log(error);
     } finally {
       dispatch(uiFinishLoading());
     }
@@ -41,7 +41,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
           .auth()
           .createUserWithEmailAndPassword(email, password);
         await user.updateProfile({ displayName: name });
-        dispatch(login(user.uid, user.displayName));
+        dispatch(login(user.uid, user.displayName, null));
       }
     } catch (error) {
       console.log(error);
@@ -59,7 +59,7 @@ export const startGoogleLogin = () => {
       const { user } = await firebase
         .auth()
         .signInWithPopup(googleAuthProvider);
-      dispatch(login(user.uid, user.displayName));
+      dispatch(login(user.uid, user.displayName, user.photoURL));
     } catch (error) {
       console.log(error);
       Swal.fire("Error", error.message, "error");

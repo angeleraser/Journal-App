@@ -4,11 +4,14 @@
 
 .notes__appbar {
   padding-bottom: 28px;
+  flex-wrap: wrap;
 }
 
 .notes__appbar h2 {
   font-size: 22px;
   color: #fff;
+  flex-shrink: 0;
+  margin-right: 16px;
   font-weight: 600;
 }
 
@@ -44,8 +47,16 @@
   display: inline-block;
   resize: none;
   height: 100%;
+  margin-bottom: 18px;
 }
 
 .notes__add-note .note-image {
   height: 150px;
+  margin-bottom: 18px;
+}
+
+@media screen and (max-width: 920px) {
+  .notes__appbar h2 {
+    margin-bottom: 16px;
+  }
 }

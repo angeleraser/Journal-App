@@ -1,10 +1,12 @@
 import React from "react";
+import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { startSaveNote, startUploadingImage } from "../../actions/notes";
 
 export const NoteAppBar = () => {
   const dispatch = useDispatch();
   const selected = useSelector(({ notes: { selected } }) => selected);
+  const date = moment(selected.date);
   const handleSaveNoteOnFirebase = () => {
     dispatch(startSaveNote(selected));
     console.log(selected);
@@ -21,7 +23,7 @@ export const NoteAppBar = () => {
   };
   return (
     <div className="notes__appbar w-full flex items-center justify-between">
-      <h2>28 de agosto 2020</h2>
+      <h2>{date.format("dddd D, MMMM YYYY.")}</h2>
       <input
         type="file"
         style={{ display: "none" }}
