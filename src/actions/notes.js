@@ -29,8 +29,6 @@ export const addNewNote = () => {
       dispatch(updateNoteList(DOCUMENT_REF.id, newEntry));
     } catch (error) {
       Swal.fire("Error", error.message, "error");
-    } finally {
-      dispatch(uiFinishLoading());
     }
   };
 };

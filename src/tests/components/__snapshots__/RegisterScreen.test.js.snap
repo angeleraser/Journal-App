@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Login Screen should match to snap 1`] = `
+Array [
+  " ",
+  <h3
+    className="auth__title"
+  >
+    Register
+  </h3>,
+  <form
+    autoComplete="off"
+    className="flex flex-col w-full items-start"
+    onSubmit={[Function]}
+  >
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="name"
+      onChange={[Function]}
+      placeholder="Your name"
+      type="name"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="email"
+      onChange={[Function]}
+      placeholder="email@example.com"
+      type="email"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="password"
+      onChange={[Function]}
+      placeholder="Enter your password..."
+      type="password"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="confirmPassword"
+      onChange={[Function]}
+      placeholder="Confirm your password..."
+      type="password"
+      value=""
+    />
+    <button
+      className="btn mb-6 btn-primary btn-block"
+      disabled={false}
+      type="submit"
+    >
+      Register
+    </button>
+    <a
+      className="link font-bold w-full text-center"
+      href="/auth/login"
+      onClick={[Function]}
+    >
+      Already register?
+    </a>
+  </form>,
+]
+`;

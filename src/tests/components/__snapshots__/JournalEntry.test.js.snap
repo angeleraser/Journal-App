@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Sidebar/> should match with snap 1`] = `
+<div
+  className="journal__entry"
+  onClick={[Function]}
+>
+  <div
+    className="journal__entry-picture"
+    style={
+      Object {
+        "backgroundImage": "url(https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg)",
+        "backgroundSize": "cover",
+      }
+    }
+  />
+  <div
+    className="journal__entry-body"
+  >
+    <h2>
+      Mi nota
+    </h2>
+    <p>
+      Mi cuerpo
+    </p>
+  </div>
+  <div
+    className="journal__entry-date-box"
+  >
+    <p
+      className="mr-1"
+    >
+      Tuesday
+    </p>
+    <h2>
+      21
+    </h2>
+  </div>
+</div>
+`;

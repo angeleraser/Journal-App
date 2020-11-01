@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Sidebar/> should match with snap 1`] = `
+<div
+  className="flex flex-col notes__add-note"
+>
+  <input
+    autoComplete="off"
+    name="title"
+    onChange={[Function]}
+    placeholder="Add a title"
+    type="text"
+    value="Mi nota"
+  />
+  <textarea
+    autoComplete="off"
+    name="body"
+    onChange={[Function]}
+    placeholder="What happened today?"
+    value="body"
+  />
+  <div
+    className="note-image"
+  >
+    <img
+      alt="note"
+      className="h-full btn-shadow"
+      src="https://sadasdas.com"
+    />
+  </div>
+  <button
+    className="btn delete-btn"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</div>
+`;

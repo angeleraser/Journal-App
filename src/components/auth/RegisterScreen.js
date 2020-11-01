@@ -15,7 +15,7 @@ export const RegisterScreen = () => {
     confirmPassword: "",
   });
   const dispatch = useDispatch();
-  const { errorMsg } = useSelector((state) => state.ui);
+  const { errorMsg, loading } = useSelector((state) => state.ui);
   const handleRegister = (e) => {
     e.preventDefault();
     if (
@@ -44,6 +44,7 @@ export const RegisterScreen = () => {
         className="flex flex-col w-full items-start">
         <input
           className="auth__input"
+          autoComplete="off"
           type="name"
           value={name}
           name="name"
@@ -53,6 +54,7 @@ export const RegisterScreen = () => {
         <input
           className="auth__input"
           value={email}
+          autoComplete="off"
           type="email"
           name="email"
           onChange={handleInputChange}
@@ -61,6 +63,7 @@ export const RegisterScreen = () => {
         <input
           type="password"
           name="password"
+          autoComplete="off"
           value={password}
           onChange={handleInputChange}
           placeholder="Enter your password..."
@@ -69,15 +72,19 @@ export const RegisterScreen = () => {
         <input
           type="password"
           value={confirmPassword}
+          autoComplete="off"
           name="confirmPassword"
           onChange={handleInputChange}
           placeholder="Confirm your password..."
           className="auth__input"
         />
-        <button className="btn mb-6 btn-primary btn-block" type="submit">
+        <button
+          disabled={loading}
+          className="btn mb-6 btn-primary btn-block"
+          type="submit">
           Register
         </button>
-        <Link className="link" to="/auth/login">
+        <Link className="link font-bold w-full text-center" to="/auth/login">
           Already register?
         </Link>
       </form>

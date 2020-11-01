@@ -25,6 +25,7 @@
   background-color: $primary;
   &:disabled {
     background-color: lighten($color: $primary, $amount: 5);
+    cursor: not-allowed;
   }
   &:hover {
     background-color: darken($color: $primary, $amount: 10);
@@ -73,4 +74,8 @@
   background-color: #d75a4a;
   max-width: 124px;
   border-radius: 4px;
+}
+
+.button.btn:disabled {
+  cursor: not-allowed;
 }

@@ -2,16 +2,15 @@ import firebase from "firebase/app";
 import "firebase/firebase-firestore";
 import "firebase/firebase-auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyA2Iges9_vdmAjZ6k0CXQj9Z5VE1rtvT4k",
-  authDomain: "react-apps-139bb.firebaseapp.com",
-  databaseURL: "https://react-apps-139bb.firebaseio.com",
-  projectId: "react-apps-139bb",
-  storageBucket: "react-apps-139bb.appspot.com",
-  messagingSenderId: "793702707855",
-  appId: "1:793702707855:web:ccb866ae82f727f0f1f6fa",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  databaseURL: process.env.REACT_APP_databaseURL,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 firebase.initializeApp(firebaseConfig);
 const dataBase = firebase.firestore();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-
 export { dataBase, firebase, googleAuthProvider };

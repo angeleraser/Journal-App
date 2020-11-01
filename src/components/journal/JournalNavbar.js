@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../actions/auth";
-import { crossIcon} from "../../svg-icons";
+import { crossIcon } from "../../svg-icons";
 import { SidebarButton } from "./SidebarButton";
 
 export const JournalNavbar = () => {
@@ -15,9 +15,9 @@ export const JournalNavbar = () => {
       <SidebarButton icon={crossIcon} />
       <div className="flex items-center user-profile">
         <span>{username}</span>
-        <img src={photoURL} alt="user profile" />
+        {photoURL && <img src={photoURL} alt="user profile" />}
       </div>
-      <button onClick={handleLogout} className="btn">
+      <button onClick={handleLogout} className="btn logout-button">
         Logout
       </button>
     </div>

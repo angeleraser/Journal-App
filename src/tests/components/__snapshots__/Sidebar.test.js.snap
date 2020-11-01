@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Sidebar/> should match with snap 1`] = `
+<aside
+  className="journal__sidebar "
+>
+  <div
+    className="journal__sidebar-navbar relative"
+  >
+    <button
+      className="menu-btn"
+      onClick={[Function]}
+    >
+      <svg
+        height="24"
+        version="1.1"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"
+        />
+      </svg>
+    </button>
+    <div
+      className="flex items-center user-profile"
+    >
+      <span>
+        angeleraser
+      </span>
+    </div>
+    <button
+      className="btn logout-button"
+      onClick={[Function]}
+    >
+      Logout
+    </button>
+  </div>
+  <button
+    className="journal__new-entry"
+    onClick={[Function]}
+  >
+    Add New entry
+    <svg
+      id="Capa_1"
+      style={
+        Object {
+          "enableBackground": "new 0 0 42 42",
+        }
+      }
+      version="1.1"
+      viewBox="0 0 42 42"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      y="0px"
+    >
+      <path
+        d="M37.059,16H26V4.941C26,2.224,23.718,0,21,0s-5,2.224-5,4.941V16H4.941C2.224,16,0,18.282,0,21
+s2.224,5,4.941,5H16v11.059C16,39.776,18.282,42,21,42s5-2.224,5-4.941V26h11.059C39.776,26,42,23.718,42,21S39.776,16,37.059,16z"
+        style={
+          Object {
+            "fill": "#fff",
+          }
+        }
+      />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </svg>
+  </button>
+  <div
+    className="journal__entries"
+  />
+</aside>
+`;

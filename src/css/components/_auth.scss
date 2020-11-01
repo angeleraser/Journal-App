@@ -46,6 +46,11 @@
   align-items: center;
   padding-top: 14px;
 }
+
 .auth__social-networks p {
   margin-bottom: 16px;
+}
+
+.auth__invalid-form-msg {
+  color: red;
 }
